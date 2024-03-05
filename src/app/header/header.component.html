@@ -1,12 +1,20 @@
 <div class="mb-8 flex justify-around border-b-2 border-black p-8">
-  <button (click)="toggleSwitch()">{{ toggle() }}</button>
+  <a class="underline" [routerLink]="['']">Log in</a>
+  <a class="underline" [routerLink]="['item-list']">Item list</a>
+  <button
+    class="border border-black p-1"
+    [style.color]="$fun() ? 'red' : 'blue'"
+    (click)="toggleSwitch()"
+  >
+    Fun: {{ $fun() }}
+  </button>
 
   <div class="justify-end">
-    @if (!username()) {
+    @if (!$username()) {
       <p>Anonymous</p>
     } @else {
-<!--      <p>Hello {{ username() }} ✨</p>-->
-      <p>{{ computedUsername() }}</p>
+      <!--      <p>Hello {{ username() }} ✨</p>-->
+      <p>{{ $computedUsername() }}</p>
     }
   </div>
 </div>

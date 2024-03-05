@@ -1,4 +1,4 @@
 <div class="flex flex-col items-center gap-4">
-  <input class="border border-black p-1" placeholder="Username" [(ngModel)]="input" />
+  <input class="border border-black p-1" placeholder="Username" (keydown.enter)="logIn()" [(ngModel)]="input" />
   <button class="w-fit border border-black p-1" (click)="logIn()">Log in</button>
 </div>

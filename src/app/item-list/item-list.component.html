@@ -1,0 +1,16 @@
+@defer (on hover) {
+  <div class="m-2 flex flex-wrap border border-black p-2">
+    @for (item of items; track $index) {
+      <div class="flex flex-col items-center gap-2">
+        <app-item [itemData]="item" [$itemData]="item" />
+      </div>
+    }
+  </div>
+} @loading (minimum 2s) {
+  <span class="text-xl text-amber-600">Loading...</span>
+} @placeholder {
+  <span>Placeholder</span>
+}
+<button class="ml-6 mt-6 border border-black p-1" (click)="changeColorFirstElem()">
+  ✨ Change color!
+</button>
